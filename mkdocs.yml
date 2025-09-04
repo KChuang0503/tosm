@@ -1,0 +1,5 @@
+site_name: 救世者之樹M Tree of Savior M
+nav:
+  - Home: index.md
+  - About: about.md
+theme: readthedocs
