@@ -1,14 +1,108 @@
 # ===== 基本設置 =====
 # 網站名稱，會顯示在瀏覽器標籤和導航列
-site_name: 救世者之樹M
+site_name: 救世者之樹 M 維基百科
 # 網站 URL，通常是 GitHub Pages 的位址
-site_url: 
+site_url:
 # 作者資訊
-site_author: Ko-Cheng, Huang
+site_author:
 # 網站描述，用於 SEO
-site_description: 
+site_description: 救世主之樹 M 維基百科
 
 # ===== 主題設置 =====
-site_url: https://mydomain.org/mysite
 theme:
-  name: material
+    # 使用 Material 主題
+    name: material
+    # 設定語言為繁體中文
+    language: zh-TW
+    # 設定網站 logo（路徑相對於 docs 目錄）
+    logo: assets/logo.png
+    # 設定網站圖示
+    favicon: assets/square-code.png
+
+    # ----- 功能設定 -----
+    features:
+        # === 導航功能 ===
+        - navigation.tabs # 頂部顯示主要分類標籤
+        - navigation.sections # 側邊欄分區顯示
+        - navigation.expand # 自動展開導航項
+        - navigation.top # 顯示返回頂部按鈕
+        - navigation.footer # 顯示頁腳導航
+        - toc.follow # 目錄跟隨滾動
+
+        # === 搜尋功能 ===
+        - search.highlight # 搜尋結果高亮顯示
+        - search.share # 可分享搜尋結果
+        - search.suggest # 搜尋建議
+
+        # === 內容功能 ===
+        - content.code.copy # 程式碼區塊可複製
+        - content.tabs.link # 分頁內容可連結
+
+        # === 進階功能 ===
+        - navigation.tracking # 跟蹤導航位置
+        - navigation.instant # 即時頁面切換
+        - header.autohide # 滾動時自動隱藏頁首
+        - announce.dismiss # 可關閉公告
+
+    # ----- 配色方案 -----
+    palette:
+        # === 亮色主題 ===
+        - media: "(prefers-color-scheme: light)" # 系統使用亮色模式時
+          scheme: default # 使用默認配色
+          primary: black # 主要顏色
+          accent: purple # 強調顏色
+          toggle:
+              icon: material/weather-sunny # 切換按鈕圖示
+              name: 切換至深色模式 # 切換按鈕提示文字
+
+        # === 暗色主題 ===
+        - media: "(prefers-color-scheme: dark)" # 系統使用暗色模式時
+          scheme: slate # 使用石板配色
+          primary: black # 主要顏色
+          accent: deep purple # 強調顏色
+          toggle:
+              icon: material/weather-night # 切換按鈕圖示
+              name: 切換至淺色模式 # 切換按鈕提示文字
+
+# 定義網站的導航結構
+nav:
+    - 首頁 / Home Page: index.md # 首頁連結
+    - 職業 / CLASS: # 關於我區段
+          - 劍士 / SWORDSMAN:
+                - class/swordsman.md #劍士 SWORDSMAN
+                - class/murmillo.md #角鬥士 MURMILLO
+                - class/peltasta.md #輕裝步兵 PELTASTA
+                - class/highlander.md #高地戰士 HIGHLANDER
+          - 法師 / WIZARD:
+                - class/wizard.md #法師 WIZARD
+    - 工作經歷 / Working Experience: # 工作經歷區段
+          - work_experience/resume.md # 履歷頁面
+    - 專案作品 / Projects: # 專案作品區段
+          - projects/Drink_Order_App.md # 專案介紹頁面
+    - 聯絡方式 / Contact: contact.md # 聯絡方式頁面
+
+markdown_extensions:
+    - tables # 支援表格功能
+    - attr_list # 支援屬性列表
+    - md_in_html # 支援在 HTML 中使用 Markdown
+    - pymdownx.highlight: # 程式碼高亮
+          anchor_linenums: true # 行號錨點
+    - pymdownx.superfences # 支援高級圍欄程式碼區塊
+    - admonition # 支援提示區塊
+    - pymdownx.details # 支援可折疊區塊
+    - pymdownx.tabbed: # 支援分頁內容
+          alternate_style: true
+    - footnotes # 支援腳註
+    - def_list # 支援定義列表
+    - pymdownx.tasklist: # 支援任務列表
+          custom_checkbox: true # 自定義核取方塊樣式
+    - toc: # 目錄設置
+          permalink: true # 顯示標題永久連結
+    - pymdownx.emoji: # Emoji 支援
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator:
+              !!python/name:material.extensions.emoji.to_svg # 插件優化
+
+plugins:
+    - search # 搜尋功能
+    - tags # 標籤系統

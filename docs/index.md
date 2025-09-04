@@ -1,5 +1,4 @@
-# 首頁
-歡迎來到救世主之樹 M WIKI
+歡迎來到救世者之樹 M WIKI
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
