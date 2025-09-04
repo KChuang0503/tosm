@@ -1,5 +1,16 @@
+# ===== 基本設置 =====
+# 網站名稱，會顯示在瀏覽器標籤和導航列
 site_name: 救世者之樹M Tree of Savior M
 nav:
   - Home: index.md
   - About: about.md
-theme: readthedocs
+# ===== 主題設置 =====
+theme: 
+  # 使用 Material 主題
+  name: readthedocs
+  # 設定語言為繁體中文
+  language: zh-Hant
+  # 設定網站 logo（路徑相對於 docs 目錄）
+  logo: assets/logo.png
+  # 設定網站圖示
+  favicon: assets/square-code.png
